@@ -1,0 +1,53 @@
+{% extends 'expenses/base.html'%}
+
+
+{%block title%}
+ExpenseShow 
+{% endblock %}
+
+{%block styling %}
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'expenses/expenseShowcase.css' %}">
+{%endblock%}
+{% block content %}
+
+<div class="expenses">
+    <div class="forms">
+       
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form}}
+    
+            {% if messages %}
+                {% for message in messages%}
+                    {% if message.level == 40 %}
+                        <h5>{{message}}</h5>
+                    {% endif %}
+                {% endfor %}
+            {%endif%}
+            <button type="submit">Login</button>
+        </form>
+        <h2 class="expenseTitle">Expenses for {{expense.name}}</h2>
+        {% for expense in expense.expenses_set.all %}
+            <div class="expense">
+                <p>{{expense.text}}</p>
+                <p class="expenseAmount">{{expense.expenseAmount}}</p>
+            </div>
+    
+        {%endfor%}
+        <div class="buttons">
+            <a href="/expenses/logout/">
+                <button>Logout</button>
+            </a>
+            <p>{{username}}</p>
+            <a href="/expenses/{{username}}/expenseBlocks/">
+                <button>Back</button>
+            </a>
+            
+        </div>
+    
+    </div>
+</div>
+
+{% endblock %}

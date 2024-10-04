@@ -1,0 +1,49 @@
+{% extends 'expenses/base.html' %}
+
+{%block styling %}
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'expenses/expenseFile.css' %}">
+{%endblock%}
+
+{%block title %}
+Expenses
+{%endblock%}
+
+{%block content%}
+<div class="forms">
+    
+    <form action="#" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="submits">Login</button>
+    </form>
+    <div class="expenses">
+        {%for expense in expenses%}
+        <div class="expense">
+            <h3>{{expense.name}}</h3>
+            <div class="expense-bar-container">
+                <div class="expense-bar" id="expenseBar"></div>
+            </div>
+            <p>{{expense.currentTotalExpense}} / {{expense.expenseLimit}}</p>
+            
+         
+            <a href="{% url 'expenseShow' expense.user.username expense.id %}">
+                <button type="button">Add Expense</button>
+            </a>
+    
+        </div>
+        {%endfor%}
+    </div>
+    <div class="buttons">
+        <a href="/expenses/logout/">
+            <button>Logout</button>
+        </a>
+        <a href="/expenses/expenseBlocks/"></a>
+            <button>Back</button>
+        </a>
+        
+    </div>
+</div>
+
+{%endblock%}

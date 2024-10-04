@@ -1,0 +1,29 @@
+{% extends 'expenses/base.html' %}
+
+
+{%block title%}
+
+Sign up
+{%endblock%}
+{% block styling %}
+
+{%load static%}
+<link rel="stylesheet" href="{% static 'expenses/signup.css' %}">
+{%endblock%}
+
+{% block content %}
+    <div class="forms">
+        <h2>Sign up</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="email">email</label>
+            <input type="text" name="email">
+            <label for="username">Username</label>
+            <input type="text" name="username">
+            <label for="password">Password</label>
+            <input type="text" name="password">
+            <button type="submit" class="submits">Sign up</button>
+            <p class="signup">Already have an account? Login <a href="/expenses/logins/">here</a></p>
+        </form>
+    </div>
+{% endblock %}

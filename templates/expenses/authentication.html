@@ -1,0 +1,24 @@
+{% extends 'expenses/base.html'%}
+
+{%block title%}
+Login
+{%endblock%}
+{%block styling %}
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'expenses/expenseCreate.css' %}">
+{%endblock%}
+{% block content%}
+<a href="/expenses/logout/"></a>
+    <button>Logout</button>
+</a>
+<div class="forms">
+    <h1>Create Expense</h1>
+    
+<form action="#" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Login</button>
+</form>
+</div>
+{% endblock %}

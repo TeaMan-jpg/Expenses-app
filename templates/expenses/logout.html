@@ -1,0 +1,30 @@
+{% extends 'expenses/base.html'%}
+
+
+{%block title%}
+Logout
+{% endblock%}
+
+{%block styling %}
+
+{%load static %}
+<link rel="stylesheet" href="{% static 'expenses/expenseShowcase.css' %}">
+{%endblock%}
+
+{%block content%}
+<div class="forms">
+    <h1>Do you want to logout? </h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <div class="buttons">
+            <button type="submit">Logout</button>
+            <a href="/expenses/expenseBlocks/">
+                <button type="button">No</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+{%endblock%}
