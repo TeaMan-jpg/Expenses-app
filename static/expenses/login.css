@@ -1,0 +1,68 @@
+form {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    padding: 1.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    border-radius: 20%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    height: 100%;
+  }
+  html {
+    margin: 0;
+    height: 100%;
+  }
+
+.forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+input,label {
+    margin: 1.5rem;
+    border-radius: 5%;
+}
+
+button {
+    margin: 2.5rem;
+}
+
+.submits {
+    margin: 2.5rem; 
+    border-radius: 20%;
+    width: 10rem;
+    padding: 0.2rem;
+}
+
+.forms h2 {
+    margin: 1rem;
+}
+
+.logged {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup {
+    margin-top: 1rem;
+}
+
+.logContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
